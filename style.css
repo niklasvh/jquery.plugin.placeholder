@@ -1,0 +1,10 @@
+/* 
+    Document   : style
+    Created on : 14.5.2011, 1:40:57
+    Author     : Niklas von Hertzen <niklas at hertzen.com>
+*/
+
+input.placeholderFallback{
+    font-style:italic;
+    color:#ccc;
+}

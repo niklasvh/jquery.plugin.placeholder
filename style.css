@@ -4,7 +4,17 @@
     Author     : Niklas von Hertzen <niklas at hertzen.com>
 */
 
-input.placeholderFallback{
+input::-webkit-input-placeholder {
+    font-style:italic;
+    color:#ccc;
+}
+
+input:-moz-placeholder {
+    font-style:italic;
+    color:#ccc;
+}
+
+input.placeholderFallback {
     font-style:italic;
     color:#ccc;
 }

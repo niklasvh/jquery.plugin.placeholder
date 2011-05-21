@@ -19,7 +19,7 @@
                 
         
                   
-        if (!supported()||forceAll){
+        if (!supported()||options.forceAll){
             $(this).focusin(function(){
                 if ($(this).val()==placeholderText){
                     $(this).val('').removeClass(options.placeholderClass);

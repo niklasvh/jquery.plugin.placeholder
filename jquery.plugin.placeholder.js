@@ -5,31 +5,29 @@
 * @website http://hertzen.com
 */
 
-(function($) {
-    $.fn.placeholder = function(options) {
+( function( $ ) {
+    $.fn.placeholder = function( options ) {
                     
         var defaults = {
             'placeholderClass':'placeholderFallback',
-            'forceAll':false
-        };
-        
-        var options = $.extend(defaults, options);            
-                    
-        var placeholderText = $(this).attr('placeholder');                
+            'forceAll': false
+        },
+        options = $.extend(defaults, options),
+        placeholderText = $( this ).attr('placeholder');                
                 
         
                   
         if (!supported()||options.forceAll){
-            $(this).focusin(function(){
-                if ($(this).val()==placeholderText){
-                    $(this).val('').removeClass(options.placeholderClass);
+            $( this ).focusin( function(){
+                if ( this.value === placeholderText ){
+                    $( this ).val('').removeClass( options.placeholderClass );
                 }
 
-            }).focusout(function(){
-                if ($(this).val()==""){
-                    $(this).val(placeholderText).addClass(options.placeholderClass);
+            } ).focusout(function(){
+                if (this.value.length === 0){
+                    $( this ).val( placeholderText ).addClass( options.placeholderClass );
                 }             
-            }).trigger('focusout');        
+            } ).trigger('focusout');        
 
         }
         
@@ -41,6 +39,6 @@
             return 'placeholder' in i;
         }
     }
-})(jQuery);
+} )( jQuery );
 
 
